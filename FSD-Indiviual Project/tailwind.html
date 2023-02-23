@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="flex justify-center text-6xl border-2 border-gray-300 rounded-xl p-6 bg-gray-100"><div class="row">
+            <div class="col-3">
+                <span>
+                    <div class="row-sm-6"><a href="pancakes.html"><img src="pancakes.jpg" style="width: 100%;"></a>
+                </span></div>
+            </div></div>
+          <div class="flex justify-center text-6xl border-2 border-gray-300 rounded-xl p-6 bg-gray-100"><div class="col-9">
+            1 ½ cups all-purpose flour. Great Value All-Purpose Flour, 5LB Bag.
+            <br>
+            3 ½ teaspoons baking powder.<br>
+            1 tablespoon white sugar.<br>
+            ¼ teaspoon salt, or more to taste.<br>
+            1 ¼ cups milk.<br>
+            3 tablespoons butter, melted.
+        </div></div>
+          <div class="flex justify-center text-6xl border-2 border-gray-300 rounded-xl p-6 bg-gray-100"><div><br>
+            Add Item To Cart: 
+            <script>
+                function increase()
+                {
+                    total+=1
+                    x = document.getElementById("p1").innerText;
+                    x = parseInt(x);
+                    document.getElementById("p1").innerText = x+1;
+                }
+                function decrease()
+                {
+                    total-=1
+                    x = document.getElementById("p1").innerText;
+                    x = parseInt(x);
+                    if(x>0)
+                    {
+                        document.getElementById("p1").innerText = x-1;
+                    }
+                }  
+              </script>
+            <button onclick="decrease()">-</button>
+            <button id="p1">0</button>
+            <button onclick="increase()">+</button>
+        </div></div>
+        </div>
+      </div>
+      <div class="border border-success p-2" id="div1">
+        <div class="row">
+            <div class="col-3">
+                <span>
+                    <div class="row-sm-6"><a href="pancakes.html"><img src="pancakes.jpg" style="width: 100%;"></a>
+                </span></div>
+            </div>
+            <div class="col-9">
+                1 ½ cups all-purpose flour. Great Value All-Purpose Flour, 5LB Bag.
+                <br>
+                3 ½ teaspoons baking powder.<br>
+                1 tablespoon white sugar.<br>
+                ¼ teaspoon salt, or more to taste.<br>
+                1 ¼ cups milk.<br>
+                3 tablespoons butter, melted.
+            </div>
+            <div><br>
+                Add Item To Cart: 
+                <script>
+                    function increase()
+                    {
+                        total+=1
+                        x = document.getElementById("p1").innerText;
+                        x = parseInt(x);
+                        document.getElementById("p1").innerText = x+1;
+                    }
+                    function decrease()
+                    {
+                        total-=1
+                        x = document.getElementById("p1").innerText;
+                        x = parseInt(x);
+                        if(x>0)
+                        {
+                            document.getElementById("p1").innerText = x-1;
+                        }
+                    }  
+                  </script>
+                <button onclick="decrease()">-</button>
+                <button id="p1">0</button>
+                <button onclick="increase()">+</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
