@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Now</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js">
+  </script>
+  <style>
+    body
+    {
+        background-color:lavenderblush;
+    }
+    
+    .row .video-container{
+        flex: 1 1 40rem;
+        position: relative;
+        background-color:lavenderblush;
+    }
+
+    .row .col-lg-3 .video-container video{
+        width: 100%;
+        border-radius: .25rem;
+        height: 100%;
+        object-fit: cover;
+        background-color:lavenderblush;
+    }
+
+    .div_hover {
+        background-color:pink;
+        border: none;
+        transition: 0.3s;
+    }
+
+    .div_hover:hover {
+        background-color: palevioletred;
+        color: white;
+    }
+
+    .div2_hover {
+        background-color:thistle;
+        border: none;
+        transition: 0.3s;
+    }
+
+    .div2_hover:hover {
+        background-color:rgb(239, 91, 91);
+        color: white;
+    }
+.top_pad
+{
+    padding-top: 115px;
+}
+
+@media only screen and (max-width:576px){
+    .top_pad
+{
+    padding-top: 75px;
+}
+    
+}
+
+@media only screen and (max-width:298px){
+    .top_pad
+{
+    padding-top: 110px;
+}
+    
+}
+
+@media only screen and (max-width : 400px)
+{
+    
+.flex_col
+{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+}
+  </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm navbar-dark fixed-top" style="background-color:crimson;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="pancakes.jpg" alt="Avatar Logo" style="width:80px;" class="rounded-pill"> 
+            </a>
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <p class="h2 text-light">FoodHacker</p>
+                </li>
+            </ul>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        
+          <div class="collapse navbar-collapse" id="mynavbar">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a href="food_deliver.html" class="nav-link"><p class="h4 text-light">Home</p></a>
+                </li>
+            </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a href="Cart.html" class="nav-link"><p class="h4 text-light">Check Cart</p></a>
+                </li>
+            </ul>
+            <div class="d-flex flex-md-column mb-3" style="background-color:crimson;">
+                <div class="p-2 text-danger" style="background-color:lightpink">Total Price  :  <button id="b" style="border: 1px;" class="text-danger"> 0</button></div>
+                <div class="p-2 text-danger" style="background-color:lightpink">Total Items  :  <button id="p" style="border: 1px;" class="text-danger"> 0</button></div>
+            </div> 
+          </div>
+        </div>
+    </nav>
+    <div class="container-fluid pt-4">
+        <div class="p-2">
+            <div class="top_pad">
+                <div class="row div_hover">
+                    <div class="col-lg-3 col-sm-6 col-md-3">
+                        <p class="h5" style="font-style: italic; color:crimson;">Pancakes : 100Rs.</p>
+                        <span>
+                            <video src="pancakes_video.mp4" style="width: 100%;" loop autoplay muted ></video>
+                        </span>
+                    </div>
+                    <div class="col-lg-6 col-sm-6 col-md-6">
+                        <p class="h4 text-secondary">Ingredients used are :</p>
+                        1 ½ cups all-purpose flour. Great Value All-Purpose Flour, 5LB Bag.
+                        <br>
+                        3 ½ teaspoons baking powder.<br>
+                        1 tablespoon white sugar.<br>
+                        ¼ teaspoon salt, or more to taste.<br>
+                        1 ¼ cups milk.<br>
+                        3 tablespoons butter, melted.
+                    </div>
+                    <div class="col-lg-3 col-md-3">
+                        <br>
+                        <br>
+                        <script>
+                            function increase()
+                            {
+                                x1 = document.getElementById("p1").innerText;
+                                x1 = parseInt(x1);
+                                s1 = document.getElementById("p1").innerText = x1+1;
+                                sessionStorage.setItem("x1",s1)
+                                
+                                z = document.getElementById("p").innerText;
+                                z=parseInt(z);
+                                q1 = document.getElementById("p").innerText = z+1;
+                                sessionStorage.setItem("z",q1)
+
+                                a6 = document.getElementById("a6").innerText;
+                                a6 = parseInt(a6);
+                                l6 = document.getElementById("a6").innerText = a6+100;
+                                sessionStorage.setItem("a6",l6)
+                                
+                                b = document.getElementById("b").innerText;
+                                b = parseInt(b);
+                                q2 = document.getElementById("b").innerText = b+100;
+                                sessionStorage.setItem("b",q2)
+                            }
+                            function decrease()
+                            {
+                                b = document.getElementById("b").innerText;
+                                b = parseInt(b);
+                                
+                                x1 = document.getElementById("p1").innerText;
+                                x1 = parseInt(x1);
+                                
+                                z = document.getElementById("p").innerText;
+                                z=parseInt(z);
+                                
+                                a6 = document.getElementById("a6").innerText;
+                                a6 = parseInt(a6);
+                                
+                                if(x1>0)
+                                {
+                                    q2 = document.getElementById("b").innerText = b-100;
+                                    sessionStorage.setItem("b",q2)
+
+                                    l6 = document.getElementById("a6").innerText = a6-100;
+                                    sessionStorage.setItem("a6",l6)
+                                    
+                                    q1 = document.getElementById("p").innerText = z-1;
+                                    sessionStorage.setItem("z",q1)
+
+                                    s1 = document.getElementById("p1").innerText = x1-1;
+                                    sessionStorage.setItem("x1",s1)
+                                }
+                            }
+                          </script>
+                        <div class="d-flex flex-md-column justify-content-between mb-3 flex_col" style="background-color: thistle;">
+                            <div class="p-2 text-danger" style="background-color: thistle;">
+                                Quantity : <button onclick="decrease()" style="background-color:lavenderblush; border: 1px;" class="text-danger">-</button>  <button id="p1" style="background-color:lavenderblush; border: 1px;" class="text-danger">0</button>  <button onclick="increase()" style="background-color:lavenderblush; border: 1px;" class="text-danger">+</button>
+                            </div>
+                            <div class="p-2 text-danger" style="background-color: thistle;">
+                                  Price Is : <button id="a6" style="background-color:lavenderblush; border: 1px;" class="text-danger">0</button> Rs.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><br>
+        <div class="p-2 div2_hover">
+            <div class="row">
+                <div class="col-lg-3 col-sm-6 col-md-3">
+                    <p class="h5" style="font-style: italic; color:crimson;">Pizzas : 150Rs.</p>
+                    <span>
+                        <video src="pizza_video.mp4" style="width: 100%;" loop autoplay muted ></video>
+                    </span>
+                </div>
+                <div class="col-lg-6 col-sm-6 col-md-6">
+                    <p class="h4 text-secondary">Ingredients used are :</p>
+                    100 gm processed cheese.<br>
+                    4 mushroom.<br>
+                    1/2 capsicum (green pepper).<br>
+                    1 teaspoon oregano.<br>
+                    1/2 cup mozzarella.<br>
+                    1 tablespoon dry yeast
+                </div>
+                <div class="col-lg-3 col-md-3">
+                    <br>
+                    <br>
+                    <script>
+                        function increase2()
+                        {
+                            b = document.getElementById("b").innerText;
+                            b = parseInt(b);
+                            q2 = document.getElementById("b").innerText = b+150;
+                            sessionStorage.setItem("b",q2)
+
+                            x2 = document.getElementById("p2").innerText;
+                            x2 = parseInt(x2);
+                            s2 = document.getElementById("p2").innerText = x2+1;
+                            sessionStorage.setItem("x2",s2)
+                            
+                            z = document.getElementById("p").innerText;
+                            z=parseInt(z);
+                            q1= document.getElementById("p").innerText = z+1;
+                            sessionStorage.setItem("z",q1)
+
+                            a5 = document.getElementById("a5").innerText;
+                            a5 = parseInt(a5);
+                            l5 = document.getElementById("a5").innerText = a5+150;
+                            sessionStorage.setItem("a5",l5)
+                        }
+                        function decrease2()
+                        {
+                            b = document.getElementById("b").innerText;
+                            b = parseInt(b);
+                            
+                            x2 = document.getElementById("p2").innerText;
+                            x2 = parseInt(x2);
+                            
+                            z = document.getElementById("p").innerText;
+                            z=parseInt(z);
+                            
+                            a5 = document.getElementById("a5").innerText;
+                            a5 = parseInt(a5);
+                            
+                            if(x2>0)
+                            {
+                                q2 = document.getElementById("b").innerText = b-150;
+                                sessionStorage.setItem("b",q2)
+
+                                l5 = document.getElementById("a5").innerText = a5-150;
+                                sessionStorage.setItem("a5",l5)
+                                
+                                q1 = document.getElementById("p").innerText = z-1;
+                                sessionStorage.setItem("z",q1)
+
+                                s2 = document.getElementById("p2").innerText = x2-1;
+                                sessionStorage.setItem("x2",s2)
+                            }
+                        }  
+                      </script>
+                     
+                     <div class="d-flex flex-md-column justify-content-between mb-3 flex_col" style="background-color:pink;">
+                        <div class="p-2 text-danger"style="background-color:pink;" class="text-danger">Quantity : <button class="text-danger" onclick="decrease2()" style="background-color:lavenderblush; border: 1px;">-</button> <button class="text-danger" id="p2" style="background-color:lavenderblush; border: 1px;">0</button> <button class="text-danger" onclick="increase2()" style="background-color:lavenderblush; border: 1px;">+</button></div>
+                        <div class="p-2 text-danger"style="background-color:pink;">Price Is : <button class="text-danger" id="a5" style="background-color:lavenderblush; border: 1px;">0</button> Rs.</div>
+                    </div>
+                </div>
+            </div>
+        </div><br>
+        <div class="p-2 div_hover">
+            <div class="row">
+                <div class="col-lg-3 col-sm-6 col-md-3">
+                    <p class="h5" style="font-style: italic; color:crimson;">Burgers : 50Rs.</p>
+                    <span>
+                        <div class="row-sm-6"><video src="burgers1.mp4" style="width: 100%;" loop autoplay muted></video>
+                        </div>
+                    </span>
+                </div>
+                <div class="col-lg-6 col-sm-6 col-md-6">
+                    <p class="h4 text-secondary">Ingredients used are :</p>
+                    1 sliced tomato<br>
+                    2 teaspoon powdered red chilli<br>
+                    3 tablespoon breadcrumbs<br>
+                    3 tablespoon butter<br>
+                    1 handful chopped coriander leaves<br>
+                    4 leaves lettuce loose-leaf
+                </div>
+                <div class="col-lg-3 col-md-3">
+                    <br>
+                    <br>
+                    <script>
+                        function increase3()
+                        {
+                            b = document.getElementById("b").innerText;
+                            b = parseInt(b);
+                            q2 = document.getElementById("b").innerText = b+50;
+                            sessionStorage.setItem("b",q2)
+
+                            x3 = document.getElementById("p3").innerText;
+                            x3 = parseInt(x3);
+                            s3 = document.getElementById("p3").innerText = x3+1;
+                            sessionStorage.setItem("x3",s3)
+                            
+                            z = document.getElementById("p").innerText;
+                            z=parseInt(z);
+                            q1 = document.getElementById("p").innerText = z+1;
+                            sessionStorage.setItem("z",q1)
+
+                            a4 = document.getElementById("a4").innerText;
+                            a4 = parseInt(a4);
+                            l4 = document.getElementById("a4").innerText = a4+50;
+                            sessionStorage.setItem("a4",l4)
+                        }
+                        function decrease3()
+                        {
+                            
+                            b = document.getElementById("b").innerText;
+                            b = parseInt(b);
+                            
+                            x3 = document.getElementById("p3").innerText;
+                            x3 = parseInt(x3);
+                            
+                            z = document.getElementById("p").innerText;
+                            z=parseInt(z);
+                            
+                            a4 = document.getElementById("a4").innerText;
+                            a4 = parseInt(a4);
+                            if(x3>0)
+                            {
+                                q2 = document.getElementById("b").innerText = b-50;
+                                sessionStorage.setItem("b",q2)
+
+                                l4 = document.getElementById("a4").innerText = a4-50;
+                                sessionStorage.setItem("a4",l4)
+                                
+                                q1 = document.getElementById("p").innerText = z-1;
+                                sessionStorage.setItem("z",q1)
+
+                                s3 = document.getElementById("p3").innerText = x3-1;
+                                sessionStorage.setItem("x3",s3)
+                            }
+                        }  
+                      </script>
+                    <div class="d-flex flex-md-column justify-content-between mb-3 flex_col" style="background-color: thistle;">
+                        <div class="p-2 text-danger" style="background-color: thistle;">Quantity : <button class="text-danger" onclick="decrease3()" style="background-color:lavenderblush; border: 1px;">-</button> <button class="text-danger" id="p3" style="background-color:lavenderblush; border: 1px;">0</button> <button class="text-danger" onclick="increase3()" style="background-color:lavenderblush; border: 1px;">+</button> </div>
+                            <div class="p-2 text-danger" style="background-color: thistle;">Price Is : <button class="text-danger" id="a4" style="background-color:lavenderblush; border: 1px;">0</button> Rs.</div></div><br>
+                </div>
+            </div>
+        </div><br>
+        <div class="p-2 div2_hover">
+            <div class="row">
+                <div class="col-lg-3 col-sm-6 col-md-3">
+                    <p class="h5" style="font-style: italic; color:crimson;">Barbeques : 90Rs.</p>
+                    <span>
+                        <video src="barbeques_video.mp4" style="width: 100%;" loop autoplay muted ></video>
+                    </span>
+                </div>
+                <div class="col-lg-6 col-sm-6 col-md-6">
+                    <p class="h4 text-secondary">Ingredients used are :</p>
+                    Greek yogurt<br>
+                    Spices like chaat masala, coriander powder, red chili powder<br>
+                    Mustard oil, for that unique flavor<br>
+                    Cilantro & mint, for freshness and taste<br>
+                    Lemon juice for tanginess<br>
+                    Mustard oil, for that unique flavor<br>
+                </div>
+                <div class="col-lg-3 col-md-3">
+                    <br>
+                    <br>
+                <script>
+                    function increase4()
+                    {
+                        b = document.getElementById("b").innerText;
+                        b = parseInt(b);
+                        q2 = document.getElementById("b").innerText = b+90;
+                        sessionStorage.setItem("b",q2)
+
+                        x4 = document.getElementById("p4").innerText;
+                        x4 = parseInt(x4);
+                        s4 = document.getElementById("p4").innerText = x4+1;
+                        sessionStorage.setItem("x4",s4)
+                        
+                        z = document.getElementById("p").innerText;
+                        z=parseInt(z);
+                        q1 = document.getElementById("p").innerText = z+1;
+                        sessionStorage.setItem("z",q1)
+
+                        a3 = document.getElementById("a3").innerText;
+                        a3 = parseInt(a3);
+                        l3 = document.getElementById("a3").innerText = a3+90;
+                        sessionStorage.setItem("a3",l3)
+                        
+                    }
+                    function decrease4()
+                    {
+                        b = document.getElementById("b").innerText;
+                        b = parseInt(b);
+                        
+                        x4 = document.getElementById("p4").innerText;
+                        x4 = parseInt(x4);
+                        
+                        z = document.getElementById("p").innerText;
+                        z=parseInt(z);
+                        
+                        a3 = document.getElementById("a3").innerText;
+                        a3 = parseInt(a3);
+                        
+                        if(x4>0)
+                        {   
+                            q2 = document.getElementById("b").innerText = b-90;
+                            sessionStorage.setItem("b",q2)
+
+                            l3 = document.getElementById("a3").innerText = a3-90;
+                            sessionStorage.setItem("a3",l3)
+                            
+                            q1 = document.getElementById("p").innerText = z-1;
+                            sessionStorage.setItem("z",q1)
+
+                            s4 = document.getElementById("p4").innerText = x4-1;
+                            sessionStorage.setItem("x4",s4)
+                        }
+                    }  
+                  </script>
+                <div class="d-flex flex-md-column justify-content-between mb-3 flex_col" style="background-color:pink;">
+                    <div class="p-2 text-danger" style="background-color:pink;">Quantity : <button class="text-danger" onclick="decrease4()" style="background-color:lavenderblush; border: 1px;">-</button> <button class="text-danger" id="p4" style="background-color:lavenderblush; border: 1px;">0</button> <button class="text-danger" onclick="increase4()" style="background-color:lavenderblush; border: 1px;">+</button> </div>
+                        <div class="p-2 text-danger" style="background-color:pink;">Price Is : <button class="text-danger" id="a3" style="background-color:lavenderblush; border: 1px;">0</button> Rs.</pre>
+            </div></div></div><br>
+            </div>
+        </div><br>
+        <div class="p-2 div_hover">
+            <div class="row">
+                <div class="col-lg-3 col-sm-6 col-md-3">
+                    <p class="h5" style="font-style: italic; color:crimson;">Noodles : 60Rs.</p>
+                    <span>
+                        <video src="noodle_video.mp4" style="width: 100%;" loop autoplay muted ></video>
+                    
+                    </span>
+                </div>
+                <div class="col-lg-6 col-sm-6 col-md-6">
+                    <p class="h4 text-secondary">Ingredients used are :</p>
+                    Noodles 1- tsp.<br>
+                    Garlic paste 1-tsp,<br>
+                    Ginger paste1/2 cup Beans1/2 cup Cabbage,<br>
+                    chopped1/2 cup Carrot,<br> chopped1/2 cup Spring onion, 
+                    chopped1/2 cup Capsicum, <br>
+                    Mustard oil, for that unique flavor<br>
+                </div>
+                <div class="col-lg-3 col-md-3">
+                    <br>
+                    <br>   
+                <script>
+                    function increase5()
+                    {
+                        b = document.getElementById("b").innerText;
+                        b = parseInt(b);
+                        q2 = document.getElementById("b").innerText = b+60;
+                        sessionStorage.setItem("b",q2)
+
+                        x5 = document.getElementById("p5").innerText;
+                        x5 = parseInt(x5);
+                        s5 = document.getElementById("p5").innerText = x5+1;
+                        sessionStorage.setItem("x5",s5)
+                        
+                        z = document.getElementById("p").innerText;
+                        z=parseInt(z);
+                        q1 = document.getElementById("p").innerText = z+1;
+                        sessionStorage.setItem("z",q1)
+
+                        a2 = document.getElementById("a2").innerText;
+                        a2 = parseInt(a2);
+                        l2 = document.getElementById("a2").innerText = a2+60;
+                        sessionStorage.setItem("a2",l2)
+                    }
+                    function decrease5()
+                    {
+                        b = document.getElementById("b").innerText;
+                        b = parseInt(b);
+                        
+                        x5 = document.getElementById("p5").innerText;
+                        x5 = parseInt(x5);
+                        
+                        z = document.getElementById("p").innerText;
+                        z=parseInt(z);
+                        
+                        a2 = document.getElementById("a2").innerText;
+                        a2 = parseInt(a2);
+                        if(x5>0)
+                        {
+                            q2 = document.getElementById("b").innerText = b-60;
+                            sessionStorage.setItem("b",q2)
+
+                            l2 = document.getElementById("a2").innerText = a2-60;
+                            sessionStorage.setItem("a2",l2)
+                            
+                            q1 = document.getElementById("p").innerText = z-1;
+                            sessionStorage.setItem("z",q1)
+
+                            s5 = document.getElementById("p5").innerText = x5-1;
+                            sessionStorage.setItem("x5",s5)
+                        }
+                    }  
+                  </script>
+                <div class="d-flex flex-md-column justify-content-between mb-3 flex_col" style="background-color: thistle;">
+                    <div class="p-2 text-danger" style="background-color: thistle;">Quantity : <button onclick="decrease5()" style="background-color:lavenderblush; border: 1px;" class="text-danger">-</button> <button id="p5" style="background-color:lavenderblush; border: 1px;" class="text-danger">0</button> <button onclick="increase5()" style="background-color:lavenderblush; border: 1px;" class="text-danger">+</button> </div>
+                        <div class="p-2 text-danger" style="background-color: thistle;">Price Is : <button id="a2" style="background-color:lavenderblush; border: 1px;" class="text-danger">0</button> Rs.
+            </div>
+            </div></div></div>
+        </div><br>
+        <div class="p-2 div2_hover">
+            <div class="row">
+                <div class="col-lg-3 col-sm-6 col-md-3">
+                    <p class="h5" style="font-style: italic; color:crimson;">Milk Shakes : 50Rs.</p>
+                    <span>
+                        <video src="milkshakes_video.mp4" style="width: 100%;" loop autoplay muted></video>
+                    </span>
+                </div>
+                <div class="col-lg-6 col-sm-6 col-md-6">
+                    <p class="h4 text-secondary">Ingredients used are :</p>
+                    2 cups vanilla ice cream<br>
+                    1/2 cup whole milk, cold<br>
+                    1/4 cup chocolate syrup<br>
+                    1/4 cup chocolate chips<br>
+                    Whipped cream, garnish<br>
+                    Shaved chocolate, garnish
+                </div> 
+                <div class="col-lg-3 col-md-3">
+                    <br>
+                    <br>
+                <script>
+                    function increase6()
+                    {
+                        b = document.getElementById("b").innerText;
+                        b = parseInt(b);
+                        q2 = document.getElementById("b").innerText = b+50;
+                        sessionStorage.setItem("b",q2)
+
+                        x6 = document.getElementById("p6").innerText;
+                        x6 = parseInt(x6);
+                        s6 = document.getElementById("p6").innerText = x6+1;
+                        sessionStorage.setItem("x6",s6)
+                        
+                        z = document.getElementById("p").innerText;
+                        z=parseInt(z);
+                        q1 = document.getElementById("p").innerText = z+1;
+                        sessionStorage.setItem("z",q1)
+
+                        a = document.getElementById("a").innerText;
+                        a = parseInt(a);
+                        l1 = document.getElementById("a").innerText = a+50;
+                        sessionStorage.setItem("a",l1)
+                    }
+                    function decrease6()
+                    {
+                        b = document.getElementById("b").innerText;
+                        b = parseInt(b);
+                        
+                        x6 = document.getElementById("p6").innerText;
+                        x6 = parseInt(x6);
+                        
+                        z = document.getElementById("p").innerText;
+                        z=parseInt(z);
+                        
+                        a = document.getElementById("a").innerText;
+                        a = parseInt(a);
+                        if(x6>0)
+                        {
+                            q2 = document.getElementById("b").innerText = b-50;
+                            sessionStorage.setItem("b",q2)
+                            
+                            l1 = document.getElementById("a").innerText = a-50;
+                            sessionStorage.setItem("a",l1)
+                            
+                            q1 = document.getElementById("p").innerText = z-1;
+                            sessionStorage.setItem("z",q1)
+                            
+                            s6 = document.getElementById("p6").innerText = x6-1;
+                            sessionStorage.setItem("x6",s6)
+                        }
+                    }  
+                  </script>
+                <div class="d-flex flex-md-column justify-content-between mb-3 flex_col" style="background-color:pink;">
+                    <div class="p-2 text-danger" style="background-color:pink;">Quantity : <button onclick="decrease6()" style="background-color:lavenderblush; border: 1px;" class="text-danger">-</button> <button id="p6" style="background-color:lavenderblush; border: 1px;" class="text-danger">0</button> <button onclick="increase6()" style="background-color:lavenderblush; border: 1px;" class="text-danger">+</button> </div>
+                    <div class="p-2 text-danger" style="background-color:pink;">Price Is : <button id="a" style="background-color:lavenderblush; border: 1px;" class="text-danger">0</button> Rs. </div>
+                </div>
+            </div><br>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
